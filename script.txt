@@ -1,0 +1,31 @@
+Robotic Arm Simulator | Milestone video | 60 seconds
+
+Kevin and Jacob each send a separate screen recording with their slide, narration, and webcam inset. Edward and Rachael film at the robot together and take turns holding the camera. Show each person’s face as they start speaking.
+
+0:00–0:13 | Kevin Yamashita | Remote, slide 1
+Keep the photo of the assembled arm visible beside your webcam inset.
+“Our goal is for a 3D arm to follow the SO-101 as someone moves it by hand. The kit arrived late, so our first milestone was assembling the arm and reading its motors.”
+
+0:13–0:28 | Edward Song | At the bench, one pose
+Start with Edward and the whole arm in frame. Point out the elbow and wrist, hold the arm in one pose, 
+then run the command below. Cut to a legible close-up of the six readings from that take.
+python read_position.py /dev/cu.usbmodem5B421340911
+
+“The robot is currently being held still and run this command once. 
+The six numbers on screen show the positions of the arm’s six servos. 
+Each encoder measures one full turn in ticks numbered zero through 4,095.”
+
+0:28–0:44 | Rachael Chen | At the bench, two gripper positions
+Before the take, start the command below and check that moving the gripper changes its reading. 
+Film Rachael holding the gripper at one opening, then another, pausing for a sample at each. 
+Show the two actual readings beside the corresponding shots. Press Ctrl+C when finished.
+python read_position.py /dev/cu.usbmodem5B421340911 --watch
+
+“Now I'm going to run a different command that takes the live positionings of the servos every second.
+So when Edward, moves the servos, you can see the readings update every second. 
+That change tells us how much the servo turned. 
+We’ll use these readings to make the 3D arm match the pose of the real arm.”
+
+0:44–1:00 | Jacob Shahatit | Remote, slide 3
+Keep your webcam inset visible and point to the checkpoints as you describe them. This clip can be recorded before the bench footage.
+“Next we’ll check each joint’s direction and zero, then render a saved pose and compare it with a photo. Once those match, we’ll stream the readings and measure how long a physical movement takes to appear on screen.”
